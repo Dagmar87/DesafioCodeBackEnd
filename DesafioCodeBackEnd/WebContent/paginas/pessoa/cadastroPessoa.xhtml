@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/templatePrincipal.xhtml">
+	<ui:define name="cabecalho">
+		<h1 align="center"
+			style="background-color: lightblue; color: darkblue;">Cadastro
+			de Pessoa</h1>
+	</ui:define>
+	<ui:define name="conteudo">
+		<p:growl id="growl" showDetail="true" sticky="true" />
+		<p:panelGrid columns="2" style="width: 100%; margin-top:10px;">
+			<p:outputLabel value="CPF: " style="color: black; font-weight: bold " />
+			<p:inputMask mask="999999999-99" value="#{PessoaBean.pessoa.cpf}"
+				style="margin-left:10px" />
+			<p:outputLabel value="Nome: "
+				style="color: black; font-weight: bold " />
+			<p:inputText value="#{PessoaBean.pessoa.nome}"
+				style="margin-left:10px" />
+			<p:outputLabel value="Idade: "
+				style="color: black; font-weight: bold " />
+			<p:inputText value="#{PessoaBean.pessoa.idade}"
+				style="margin-left:10px" />
+			<p:outputLabel value="Genero: "
+				style="color: black; font-weight: bold " />
+			<p:inputText value="#{PessoaBean.pessoa.genero}"
+				style="margin-left:10px" />
+			<p:outputLabel value="Telefone: "
+				style="color: black; font-weight: bold " />
+			<p:inputMask mask="(99)99999-9999"
+				value="#{PessoaBean.pessoa.telefone}" style="margin-left:10px" />
+			<p:outputLabel value="Email: "
+				style="color: black; font-weight: bold " />
+			<p:inputText value="#{PessoaBean.pessoa.email}"
+				style="margin-left:10px" />
+			<p:outputLabel value="Senha:  "
+				style="color: black; font-weight: bold " />
+			<p:password value="#{PessoaBean.pessoa.senha}"
+				style="margin-left:10px" />
+			<p:outputLabel value="Profissão: "
+				style="color: black; font-weight: bold " />
+			<p:inputText value="#{PessoaBean.pessoa.profissao}"
+				style="margin-left:10px" />
+			<p:outputLabel value="Cidade: "
+				style="color: black; font-weight: bold " />
+			<p:inputText value="#{PessoaBean.pessoa.cidade}"
+				style="margin-left:10px" />
+		</p:panelGrid>
+		<p:panelGrid columns="1" style="width: 100%; margin-top:10px">
+			<p:commandButton value="SALVAR" style="color: darkblue"
+				actionListener="#{PessoaBean.inserirPessoa}" update="@form" />
+		</p:panelGrid>
+	</ui:define>
+</ui:composition>
+
+</html>
